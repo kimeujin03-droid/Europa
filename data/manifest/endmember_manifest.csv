@@ -1,0 +1,10 @@
+endmember_group,material_name,source_database,source_file,wavelength_min_um,wavelength_max_um,value_type,role,notes
+ice,water ice,USGS/RELAB,,0.7,5.2,reflectance,base,H2O ice base endmember
+ocean_salt,epsomite,USGS/RELAB,,0.7,5.2,reflectance,ocean salt,hydrated Mg sulfate
+ocean_salt,mirabilite,USGS/RELAB,,0.7,5.2,reflectance,ocean salt,hydrated Na sulfate
+simple_organic,aliphatic/aromatic/carboxyl/amide proxy,USGS/RELAB or parametric,,0.7,5.2,reflectance/proxy,positive,functional group proxy for ocean-derived organic-bearing candidate
+tholin_pah,PAH template,NASA Ames PAHdb,,0.7,5.2,absorbance/intensity,hard negative,converted to proxy reflectance; not direct Europa reflectance
+radiation,sulfuric acid hydrate,RELAB/PDS or literature,,0.7,5.2,reflectance,rad mimic,main radiolysis product
+radiation,sulfur/SO2,USGS/RELAB,,0.7,5.2,reflectance,rad mimic,sulfur-bearing radiation product
+radiation,H2O2,RELAB/literature/proxy,,3.0,4.0,reflectance/proxy,rad mimic,3.5 um radiolysis marker
+radiation,rad-salt proxy,parametric/literature,,0.7,5.2,reflectance/proxy,rad mimic,radiolytically altered salt parameter

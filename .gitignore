@@ -1,0 +1,34 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Large downloaded archives and broad metadata caches are intentionally omitted.
+data/raw/usgs_splib07/ASCIIdata_splib07a.zip
+data/raw/usgs_splib07/ASCIIdata_splib07a/
+data/raw/usgs_splib07/sciencebase_*.json
+data/raw/relab/collection_*_inventory.csv
+data/raw/relab/*.xml
+data/raw/relab/metadata_cache/**
+
+# Re-include the small RELAB source used by the selected hydrated salt endmember.
+!data/raw/relab/metadata_cache/
+!data/raw/relab/metadata_cache/ftir1/
+!data/raw/relab/metadata_cache/ftir1/799s366.xml
+!data/raw/relab/metadata_cache/ftir1/799s366.tab
+
+# Generated full datasets can be rebuilt from scripts.
+data/processed/*.csv
+!data/processed/endmembers/
+!data/processed/endmembers/*.csv
+
+# Keep final/paper-facing results, not all exploratory run outputs.
+results/*.csv
+results/*.png
+!results/*literature_radiation_v1_logreg*
+!results/processed_endmembers.png
+!results/qc/
+!results/qc/*.csv
+!results/qc/*.png
+!results/paper/
+!results/paper/*.csv
+!results/paper/*.png

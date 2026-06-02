@@ -1,0 +1,9 @@
+﻿feature,r2_explained_by_others,vif,flag_vif_gt_5,flag_vif_gt_10
+trailing_hemisphere,0.7188447864389549,3.55675424735767,False,False
+radiation_exposure,0.7070514609717435,3.413568824466964,False,False
+chaos_proximity,0.6973483576178771,3.3041287736922853,False,False
+lineament_proximity,0.6927650940312469,3.2548384984019476,False,False
+sulfur_proxy,0.6827854790109056,3.1524408053008997,False,False
+activity_proxy,0.6373916474077223,2.7577963741072864,False,False
+ridge_proximity,0.5971745194051779,2.4824646110354665,False,False
+rad_mimic_proxy,0.27872955078782224,1.3864424933702333,False,False
