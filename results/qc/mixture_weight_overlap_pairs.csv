@@ -1,0 +1,5 @@
+﻿class_a,class_b,weight,n_a,n_b,mean_a,mean_b,overlap_coefficient
+ocean_organic,radiation_mimic,w_simple_organic,1425,2248,0.06638562307201552,0.04254084778549036,0.5685396765936196
+ocean_organic,radiation_mimic,w_ocean_salt,1425,2248,0.3417819560737737,0.206738339853908,0.19952644065680217
+ocean_organic,exogenic_complex_organic,w_simple_organic,1425,1615,0.06638562307201552,0.046182339911497956,0.6437151702786376
+radiation_mimic,exogenic_complex_organic,w_simple_organic,2248,1615,0.04254084778549036,0.046182339911497956,0.8790445996716727

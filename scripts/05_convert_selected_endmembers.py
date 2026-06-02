@@ -110,12 +110,12 @@ def sulfuric_acid_hydrate_literature_shape_proxy(wavelengths: np.ndarray) -> np.
     """
     values = full_range_continuum(wavelengths, intercept=0.93, slope=-0.018)
     for center, width, depth in [
-        (1.50, 0.15, 0.060),
-        (1.95, 0.18, 0.075),
-        (2.75, 0.22, 0.055),
-        (3.05, 0.38, 0.260),
-        (3.90, 0.30, 0.055),
-        (4.45, 0.32, 0.040),
+        (1.36, 0.10, 0.055),
+        (1.79, 0.13, 0.065),
+        (2.10, 0.14, 0.075),
+        (3.05, 0.38, 0.240),
+        (3.90, 0.30, 0.045),
+        (4.45, 0.32, 0.035),
     ]:
         values -= gaussian_absorption(wavelengths, center, width, depth)
     return np.clip(values, 0.05, 1.2)
@@ -125,7 +125,6 @@ def h2o2_literature_marker_proxy(wavelengths: np.ndarray) -> np.ndarray:
     values = full_range_continuum(wavelengths, intercept=0.92, slope=-0.004)
     for center, width, depth in [
         (3.50, 0.075, 0.040),
-        (2.85, 0.120, 0.018),
     ]:
         values -= gaussian_absorption(wavelengths, center, width, depth)
     return np.clip(values, 0.05, 1.2)

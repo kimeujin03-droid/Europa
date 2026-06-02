@@ -1,0 +1,2 @@
+model,n_pairs_requested,n_pairs,ambiguous_low,ambiguous_high,selected_source_score_mean,selected_source_score_std,spectral_delta_mean,spectral_delta_std,full_delta_mean,full_delta_std,full_delta_sign_test_p
+logreg,100,100,0.4,0.7,0.5555936337710246,0.09685300396007689,0.0,0.0,0.8152509988746388,0.165833978952413,1.5777218104420236e-30

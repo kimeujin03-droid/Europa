@@ -42,7 +42,7 @@ def toy_endmember_library(wavelengths: np.ndarray) -> dict[str, np.ndarray]:
 
     # Simple organics: intentionally weak C-H-like structure for hard-positive tests.
     simple_org = continuum(w, slope=0.015, intercept=0.9)
-    for c, wid, dep in [(2.28, 0.05, 0.035), (2.95, 0.06, 0.040), (3.38, 0.065, 0.090), (3.48, 0.065, 0.070), (4.65, 0.08, 0.050)]:
+    for c, wid, dep in [(2.95, 0.06, 0.040), (3.38, 0.065, 0.090), (3.48, 0.065, 0.070), (4.65, 0.08, 0.050)]:
         simple_org -= gaussian_absorption(w, c, wid, dep)
     simple_org = clip_reflectance(simple_org)
 
@@ -66,7 +66,7 @@ def toy_endmember_library(wavelengths: np.ndarray) -> dict[str, np.ndarray]:
 
     # H2O2 proxy: feature near 3.5 µm.
     h2o2 = continuum(w, slope=-0.01, intercept=0.92)
-    for c, wid, dep in [(3.5, 0.08, 0.18), (2.8, 0.10, 0.05)]:
+    for c, wid, dep in [(3.5, 0.08, 0.04)]:
         h2o2 -= gaussian_absorption(w, c, wid, dep)
     h2o2 = clip_reflectance(h2o2)
 

@@ -25,6 +25,7 @@ data/processed/*.csv
 results/*.csv
 results/*.png
 !results/*literature_radiation_v1_logreg*
+!results/*leakage_fix_v1_logreg*
 !results/processed_endmembers.png
 !results/qc/
 !results/qc/*.csv
