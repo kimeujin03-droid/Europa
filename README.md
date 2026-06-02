@@ -1,66 +1,46 @@
-# Europa Surface Biosignature-Candidate ML Triage: Experiment Starter
+# Europa Library-Informed Synthetic Benchmark
 
-이 폴더는 유로파 표면 분광-공간 맥락 기반 biosignature-candidate triage 논문의 1차 실험을 바로 시작하기 위한 최소 코드 뼈대입니다.
+This repository contains starter code, selected endmember files, QC outputs, and paper-facing CSV/PNG results for a Europa surface spectral triage benchmark.
 
-## 핵심 원칙
+The benchmark evaluates whether spatial geology/radiation context improves triage of ambiguous ocean-organic candidates relative to a spectral-only baseline. It is not a claim of biosignature detection on Europa.
 
-- 메인 파장 범위: Galileo/NIMS 기준 0.7--5.2 µm.
-- 라벨은 feature 조합으로 만들지 않습니다. 숨겨진 생성 원인 `z`에서 라벨을 만듭니다.
-- 모델은 `z`를 보지 않고 noisy spectrum + geology/radiation proxy만 봅니다.
-- 메인 평가는 `ocean_organic` vs rest ranking 문제입니다.
-- 실제 Galileo/NIMS 적용은 validation이 아니라 qualitative sanity check입니다.
+## Current Benchmark Version
 
-## 설치
+The committed results use a `library-informed hybrid` endmember set:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
-pip install -r requirements.txt
-```
+- USGS H2O ice 77 K plus a long-wavelength proxy tail.
+- RELAB magnesium sulfate hydrate for the hydrated salt component.
+- USGS benzanthracene as a PAH-like hard-negative organic template.
+- USGS sulfur reagent as an auxiliary sulfur radiolysis component.
+- Literature-constrained sulfuric-acid-hydrate and H2O2 marker proxies.
+- Explicitly labeled functional organic and derived radiolytic salt proxies.
 
-선택적으로 GitHub/외부 패키지:
+See `data/manifest/endmember_selection.csv` and `data/manifest/endmember_data_status.csv` for source tiers and caveats.
 
-```bash
-# PDS4 자료 읽기
-pip install pds4-tools
-
-# hyperspectral cube/ENVI 자료 처리
-pip install spectral
-
-# USGS Spectral Library v7 local archive loader
-pip install 'splib07-loader @ git+https://github.com/brianschubert/splib07-loader.git'
-```
-
-## 실행 순서
+## Main Scripts
 
 ```bash
-# 1. synthetic dataset 생성
+python scripts/05_convert_selected_endmembers.py
+python scripts/07_plot_processed_endmembers.py
+python scripts/09_qc_collinearity.py
+python scripts/10_qc_context_vif.py
+
 python scripts/01_generate_dataset.py --n 8000 --rho-geo 0.75 --rho-rad 0.75
-
-# 2. Experiment 1: spectral-only vs spatial-spectral
-python scripts/02_run_experiment1.py
-
-# 3. Experiment 2: prior-strength sweep
-python scripts/03_prior_sweep.py
-
-# 4. Experiment 3: same-spectrum/different-location stress test
-python scripts/04_same_spectrum_test.py
+python scripts/02_run_experiment1.py --model logreg --seeds 20 --tag literature_radiation_v1_logreg
+python scripts/03_prior_sweep.py --model logreg --n 2500 --tag literature_radiation_v1_logreg
+python scripts/04_same_spectrum_test.py --model logreg --tag literature_radiation_v1_logreg
+python scripts/13_ambiguous_subset_eval.py --model logreg --seeds 20 --tag literature_radiation_v1_logreg
 ```
 
-결과는 `results/`에 CSV/PNG로 저장됩니다.
+## Key Outputs
 
-## 이후 실제 자료 연결
+- `results/experiment1_metrics_literature_radiation_v1_logreg.csv`
+- `results/prior_sweep_metrics_literature_radiation_v1_logreg.csv`
+- `results/same_spectrum_paired_stats_literature_radiation_v1_logreg.csv`
+- `results/ambiguous_subset_metrics_literature_radiation_v1_logreg.csv`
+- `results/processed_endmembers.png`
+- `results/paper/`
 
-1. `data/endmembers/`에 실험실 spectra CSV를 넣습니다. 형식은 `wavelength_um, reflectance` 또는 `wavelength_um, intensity`입니다.
-2. `src/loaders.py`의 placeholder 함수를 사용해 NIMS/RELAB/USGS/PAHdb 자료를 로드합니다.
-3. `src/endmembers.py`의 toy Gaussian endmember를 실제 spectrum interpolation으로 교체합니다.
-4. Galileo/NIMS real-data sanity check는 별도 script로 추가합니다. ground truth가 없으므로 validation이라고 쓰면 안 됩니다.
+## Data Policy
 
-## 출력 파일
-
-- `results/experiment1_metrics.csv`
-- `results/experiment1_pr_curve.png`
-- `results/prior_sweep_metrics.csv`
-- `results/prior_sweep_heatmap_fpr_reduction.png`
-- `results/same_spectrum_scores.csv`
-- `results/same_spectrum_comparison.png`
+Large downloaded archives and broad RELAB metadata caches are excluded from git. The repository includes only small selected source files needed by the current endmember selection plus processed endmember CSV files.
