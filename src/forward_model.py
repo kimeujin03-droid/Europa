@@ -102,10 +102,11 @@ def generate_spectrum(
             "simple_organic": rng.uniform(0.0, 0.030),
         }
     elif z == "radiation_mimic":
+        rad_so_hi = cfg.rad_simple_organic_hi
         weights = {
             "ice": rng.uniform(0.35, 0.65),
             "ocean_salt": rng.uniform(0.16, 0.38),
-            "simple_organic": rng.uniform(0.020, 0.090),
+            "simple_organic": rng.uniform(0.020, rad_so_hi),
             "sulfuric_acid_hydrate": rng.uniform(0.12, 0.28),
             "sulfur_so2": rng.uniform(0.03, 0.13),
             "h2o2": rng.uniform(0.00, 0.08),

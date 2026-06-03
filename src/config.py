@@ -17,6 +17,10 @@ class ExperimentConfig:
     noise_sigma: float | None = None
     noise_condition: str = "moderate"
     smoothing_window: int | None = None
+    # Upper bound for radiation_mimic simple_organic raw weight before normalization.
+    # Default (0.090) gives w_simple_organic overlap ~0.57 with ocean_organic.
+    # Raise to 0.130 to push overlap toward 0.7–0.8.
+    rad_simple_organic_hi: float = 0.090
 
     @property
     def effective_noise_sigma(self) -> float:

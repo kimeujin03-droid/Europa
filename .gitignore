@@ -3,6 +3,15 @@ __pycache__/
 *.pyc
 
 # Large downloaded archives and broad metadata caches are intentionally omitted.
+# NIMS PDS cubes (binary, ~7 MB total) and USGS geomap (148 MB zip + shapefiles).
+data/raw/nims_pds/
+data/raw/usgs_europa_geomap/
+# Per-pixel NIMS score CSVs (large, reproducible from script).
+results/nims_sanity_check/nims_e*_scores.csv
+results/nims_sanity_check/nims_g*_scores.csv
+results/nims_sanity_check/nims_leading_scores.csv
+results/nims_sanity_check/nims_trailing_scores.csv
+results/nims_sanity_check/nims_score_results.csv
 data/raw/usgs_splib07/ASCIIdata_splib07a.zip
 data/raw/usgs_splib07/ASCIIdata_splib07a/
 data/raw/usgs_splib07/sciencebase_*.json
