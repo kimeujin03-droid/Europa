@@ -1,0 +1,7 @@
+cohort,embedding,label,silhouette
+selected_observations_12,PCA_observation_mean,hemisphere,0.08882280648934156
+selected_observations_12,NMF_observation_mean,hemisphere,-0.10214058089678778
+selected_observations_12,PCA_observation_mean,terrain,0.052774419603886076
+selected_observations_12,NMF_observation_mean,terrain,0.013574394995095093
+selected_observations_12,PCA_observation_mean,group,-0.04877076802295336
+selected_observations_12,NMF_observation_mean,group,-0.21903272850754432

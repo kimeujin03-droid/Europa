@@ -1,0 +1,8 @@
+group,screen_pass,count
+leading_chaos,False,6
+leading_chaos,True,2
+leading_plains,False,8
+trailing_chaos,False,6
+trailing_chaos,True,2
+trailing_plains,False,5
+trailing_plains,True,3

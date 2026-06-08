@@ -1,0 +1,17 @@
+group,product,cube_count
+leading_chaos,ci,33
+leading_chaos,cr,33
+leading_chaos,ti,38
+leading_chaos,tr,38
+leading_plains,ci,9
+leading_plains,cr,9
+leading_plains,ti,12
+leading_plains,tr,12
+trailing_chaos,ci,11
+trailing_chaos,cr,11
+trailing_chaos,ti,14
+trailing_chaos,tr,14
+trailing_plains,ci,21
+trailing_plains,cr,21
+trailing_plains,ti,22
+trailing_plains,tr,22

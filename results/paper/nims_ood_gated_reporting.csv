@@ -1,0 +1,9 @@
+band_label,encounter,hemisphere,terrain,geo_unit,mean_ood_ratio,ood_gate,permitted_interpretation,report_p_full,delta_geo,delta_rad,delta_full,report_context_geo_sign,report_context_rad_sign,val_pr_auc_full,val_roc_auc_full
+0.7-5.2,E6,leading,chaos,chm,52.333,ood_only,OOD diagnostic only; calibrated score withheld,,3.149,1.342,4.492,,,0.843,0.961
+0.7-5.2,E15,leading,plains,pr,37.822,ood_only,OOD diagnostic only; calibrated score withheld,,-4.023,1.456,-2.567,,,0.843,0.961
+0.7-5.2,G2,trailing,chaos,chl,51.026,ood_only,OOD diagnostic only; calibrated score withheld,,2.526,-0.635,1.891,,,0.843,0.961
+0.7-5.2,E11,trailing,plains,pr,48.462,ood_only,OOD diagnostic only; calibrated score withheld,,-4.023,-0.535,-4.557,,,0.843,0.961
+0.7-2.0,E6,leading,chaos,chm,11.881,context_only,context sign only; calibrated score withheld,,3.015,0.767,3.781,1.0,1.0,0.569,0.904
+0.7-2.0,E15,leading,plains,pr,34.754,ood_only,OOD diagnostic only; calibrated score withheld,,-3.896,0.826,-3.071,,,0.569,0.904
+0.7-2.0,G2,trailing,chaos,chl,5.837,score_reportable,exploratory score + context sign,0.002853,2.415,-0.371,2.044,1.0,-1.0,0.569,0.904
+0.7-2.0,E11,trailing,plains,pr,11.345,context_only,context sign only; calibrated score withheld,,-3.896,-0.319,-4.216,-1.0,-1.0,0.569,0.904

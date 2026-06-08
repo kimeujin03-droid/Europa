@@ -1,0 +1,5 @@
+group,all_metadata_cubes,all_metadata_observations,coverage_0p7_2p0_cubes,coverage_0p7_2p0_observations,coverage_0p7_5p2_cubes,coverage_0p7_5p2_observations,ci_coverage_0p7_2p0_cubes,ci_coverage_0p7_2p0_observations,known_ood_pass_cubes,known_ood_pass_observations
+leading_chaos,142,39,94,26,76,21,22,22,3,3
+leading_plains,42,12,28,7,4,1,7,7,5,4
+trailing_chaos,50,14,12,3,8,2,3,3,3,3
+trailing_plains,86,24,12,3,8,2,3,3,4,3

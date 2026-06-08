@@ -1,0 +1,10 @@
+screen_set,group,screen_pass,cube_count,observation_count
+leading_plains_all_coverage,leading_plains,False,23,7
+leading_plains_all_coverage,leading_plains,True,5,4
+top8_each_group,leading_chaos,False,6,3
+top8_each_group,leading_chaos,True,2,2
+top8_each_group,leading_plains,False,8,2
+top8_each_group,trailing_chaos,False,6,2
+top8_each_group,trailing_chaos,True,2,2
+top8_each_group,trailing_plains,False,5,2
+top8_each_group,trailing_plains,True,3,2

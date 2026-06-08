@@ -1,0 +1,56 @@
+========================================================================
+OOD DIAGNOSIS REPORT
+========================================================================
+
+── Noise / SNR ─────────────────────────────────────────────────────
+  NIMS effective sigma (across all obs): 0.0269
+  Synth effective sigma (after smoothing+norm): 0.0084
+  NIMS / synth sigma ratio: 3.21×
+  NIMS mean SNR: 10.6
+  Synth mean SNR: 88.7
+  E6: sigma=0.0171  SNR=12.1
+  E15: sigma=0.0578  SNR=5.7
+  G2: sigma=0.0127  SNR=17.5
+  E11: sigma=0.0197  SNR=11.7
+
+── Long-wave / short-wave mean ratio ───────────────────────────────
+  NIMS   SW (<3.5µm) mean: 0.3221
+  NIMS   LW (>3.5µm) mean: 0.1063
+  NIMS   LW/SW ratio: 0.3300
+  Synth  SW mean: 0.6765
+  Synth  LW mean: 0.8249
+  Synth  LW/SW ratio: 1.2193
+  NIMS/synth LW/SW ratio: 0.27×
+(>1 means NIMS long-wave is elevated relative to synth — thermal emission signature)
+
+── PCA gap (top contributors, |n_sigma| > 2) ───────────────────────
+  E6  PC5  shift=-4.205  n_sigma=-79.3  var_exp=0.8%
+  G2  PC5  shift=-4.114  n_sigma=-77.6  var_exp=0.8%
+  E11  PC5  shift=-4.066  n_sigma=-76.7  var_exp=0.8%
+  E15  PC5  shift=-3.280  n_sigma=-61.9  var_exp=0.8%
+  E6  PC8  shift=+1.725  n_sigma=+48.7  var_exp=0.4%
+  E11  PC8  shift=+1.652  n_sigma=+46.6  var_exp=0.4%
+  G2  PC8  shift=+1.605  n_sigma=+45.3  var_exp=0.4%
+  E15  PC8  shift=+1.516  n_sigma=+42.8  var_exp=0.4%
+  E6  PC10  shift=-1.121  n_sigma=-32.9  var_exp=0.3%
+  E15  PC6  shift=-1.173  n_sigma=-29.1  var_exp=0.5%
+  E11  PC10  shift=-0.943  n_sigma=-27.7  var_exp=0.3%
+  G2  PC9  shift=-0.948  n_sigma=-27.5  var_exp=0.4%
+
+── Continuum statistics (short-wave 0.7–3.4 µm) ───────────────────
+  NIMS_E6            slope=-1.0023±0.0348  curv=+1.1039±0.1396  range=0.9871±0.0103
+  NIMS_E15           slope=-0.3177±0.3705  curv=+0.3013±0.2277  range=0.5229±0.2916
+  NIMS_G2            slope=-1.0491±0.0192  curv=+1.0048±0.1688  range=0.9919±0.0085
+  NIMS_E11           slope=-0.9165±0.0367  curv=+1.1525±0.2976  range=0.9486±0.0321
+  synth_pool         slope=-0.4969±0.0612  curv=+0.4049±0.3340  range=0.5322±0.0738
+
+── DIAGNOSIS & FORWARD MODEL CORRECTION TARGETS ────────────────────
+  [NOISE]  NIMS sigma 3.2× larger than synthetic.
+           → Increase effective_noise_sigma in forward model,
+             or reduce smoothing_window to match NIMS noise texture.
+  [THERMAL] LW/SW ratio 0.27 — no strong thermal offset detected.
+  [PCA]    Dominant OOD axis: PC5 (affects 4.0/4 obs, mean |n_sigma|=73.9, var_exp=0.8%)
+           → PC5-dominated gap: spectral SHAPE mismatch.
+             Fix: review endmember shapes in critical wavelength bands.
+
+========================================================================

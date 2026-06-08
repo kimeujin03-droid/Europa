@@ -1,0 +1,9 @@
+cohort,group,n_obs,median_of_median_ood_ratio,median_of_median_p_full,median_delta_full,score_reportable_obs,context_only_obs,ood_only_obs
+selected_observations_8,leading_chaos,2,8.979908395248088,0.3457277593458176,3.812681794552494,1,1,0
+selected_observations_8,leading_plains,2,7.780113706165462,1.0055899420183254e-05,-3.181038230722559,2,0,0
+selected_observations_8,trailing_chaos,2,11.665308606670264,0.0231742960736864,2.049107003722498,1,1,0
+selected_observations_8,trailing_plains,2,8.743631661099574,9.481520869640015e-05,-4.193404424062379,1,1,0
+selected_observations_12,leading_chaos,3,6.478576941003819,0.6798754281336112,3.844098332926284,2,1,0
+selected_observations_12,leading_plains,3,8.978889673116779,5.034037167615e-06,-3.177115436256223,2,1,0
+selected_observations_12,trailing_chaos,3,17.920764705205574,0.0439862461643327,2.05390715986488,1,2,0
+selected_observations_12,trailing_plains,3,12.814555937382917,5.768088290309326e-05,-4.182101389853833,1,2,0

@@ -1,0 +1,6 @@
+hemisphere,terrain,group,metadata_count
+leading,chaos,leading_chaos,142
+leading,plains,leading_plains,42
+trailing,chaos,trailing_chaos,50
+trailing,plains,trailing_plains,86
+unknown,other,other,3
